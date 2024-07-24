@@ -1,0 +1,38 @@
+{
+  "name": "02-api-rest-nodejs",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node build/server.js",
+    "start:dev": "tsx watch --clear-screen=false src/server.js",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "build": "tsup src --out-dir build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "knex": "node --import tsx ./node_modules/.bin/knex",
+    "migrate:make": "node --import tsx ./node_modules/.bin/knex migrate:make",
+    "migrate:up": "node --import tsx ./node_modules/.bin/knex migrate:up",
+    "migrate:down": "node --import tsx ./node_modules/.bin/knex migrate:down",
+    "migrate:latest": "node --import tsx ./node_modules/.bin/knex migrate:latest",
+    "migrate:rollback": "node --import tsx ./node_modules/.bin/knex migrate:rollback"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^9.3.1",
+    "dotenv": "^16.4.5",
+    "fastify": "^4.28.1",
+    "knex": "^3.1.0",
+    "sqlite3": "^5.1.7",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@rocketseat/eslint-config": "^2.2.2",
+    "@types/node": "^20.14.11",
+    "@types/supertest": "^6.0.2",
+    "eslint": "^8.57.0",
+    "supertest": "^7.0.0",
+    "tsup": "^8.2.3",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3",
+    "vitest": "^2.0.4"
+  }
+}
